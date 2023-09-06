@@ -4,37 +4,14 @@ import { App } from 'components/App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store';
+import { store } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter basename="/goit-react-hw-07-phonebook">
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
+        <App />
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react'; // импортируем PersistGate
-// import { store, persistor } from './store'; // импортируем наше хранилище
-
-// import App from './App';
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <PersistGate loading={null} persistor={persistor}>
-//       {' '}
-//       {/* Оборачиваем приложение в PersistGate */}
-//       <App />
-//     </PersistGate>
-//   </Provider>,
-//   document.getElementById('root')
-// );
